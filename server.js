@@ -1,10 +1,11 @@
 let express = require('express');
-const app = express();
+let app = express();
+const port = process.env.PORT || 8080
 
 app.get('/saludo', (req, resp) => {
-    resp.send("Hello World")
+    resp.json("Hello World")
 })
 
-app.listen(8080, () => {
+app.listen(port, () => {
     console.log('Escuchando en puerto 8080');
 })
